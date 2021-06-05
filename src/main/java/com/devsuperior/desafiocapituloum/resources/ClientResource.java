@@ -1,7 +1,5 @@
 package com.devsuperior.desafiocapituloum.resources;
 
-import java.time.Instant;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.desafiocapituloum.entities.Client;
+import com.devsuperior.desafiocapituloum.dto.ClientDTO;
 import com.devsuperior.desafiocapituloum.services.ClientService;
 
 @RestController
@@ -21,8 +19,8 @@ public class ClientResource {
 	private ClientService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Client>> findAll(){
-		List<Client> list = service.findAll();
+	public ResponseEntity<List<ClientDTO>> findAll(){
+		List<ClientDTO> list = service.findAll();
 		
 		return ResponseEntity.ok().body(list);
 		
